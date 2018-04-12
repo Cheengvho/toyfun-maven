@@ -37,7 +37,7 @@ public class MyTestController {
 		return "new";
 	}
 	
-	@RequestMapping(value="/pojo.jsp")
+	@RequestMapping(value="/pojo")
 	public String findpojo() {
 		
 		return "pojo";
@@ -52,7 +52,7 @@ public class MyTestController {
 	
 	@RequestMapping(value="/pojo2")
 	public String mypojo2(Order order) {
-		User u = new User();
+		User u = order.getUser();
 		System.out.println("oaddress:"+order.getOaddress());
 		System.out.println("uname:"+u.getUname());
 		return "new";
