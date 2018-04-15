@@ -25,10 +25,31 @@ function jsondemo(){
 		}
 	});
 }
+
+function jsondemo2(){
+	
+	$.ajax({
+		type:"GET",
+		url:"./ajaxdemo2",
+		data:"myname"+"shisis",
+		dataType:'text',
+		contentType:"text/plain;charset=utf-8",
+		success:function(data){
+			alert(data);
+			$("#showjson2").html("测试中文传值:"+data);
+		},
+		error:function(r){
+			alert("error");
+		}
+	});
+}
 </script>
 </head>
 <body>
-	<buttion onclick="jsondemo()" style="border:1px solid #000000; cursor:point; ">点击这里显示ajax返回值</buttion>
+	<buttion onclick="jsondemo()" style="border:1px solid #000000; cursor:point; ">点击这里显示返回值</buttion>
 	<p id="showjson"></p>
+	
+	<buttion onclick="jsondemo2()" style="border:1px solid #000000; cursor:point; ">点击这里显示中文传值返回值</buttion>
+	<p id="showjson2"></p>
 </body>
 </html>
