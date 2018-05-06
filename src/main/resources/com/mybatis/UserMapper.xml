@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.UserMapper">
+	<select id="select" parameterType="com.mybatis.model.Kuser" resultType="com.mybatis.model.Kuser">
+		select * from kuser where kuname = #{kuname} and kupassword = #{kupassword}
+	</select>
+	<insert id="insertUser">
+		insert into kuser(kuid,kuname,kupassword) values(#{kuid},#{kuname},#{kupassword})
+	</insert>
+	<select id="selectAllUser" resultType="com.mybatis.model.Kuser">
+		select * from kuser
+	</select>
+</mapper>
